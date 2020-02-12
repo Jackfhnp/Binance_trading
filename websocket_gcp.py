@@ -25,12 +25,10 @@ def process_orderbook(msg):
     add_header(price_path, volume_path)
     with open(price_path, 'a') as f1:
         w = csv.DictWriter(f1, prices.keys())
-        w.writeheader()
         w.writerow(prices)
         f1.close()
     with open(volume_path, 'a') as f2:
         w = csv.DictWriter(f2, volume.keys())
-        w.writeheader()
         w.writerow(volume)
     f2.close()
 
